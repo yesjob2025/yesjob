@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="예스잡(YESJOB) 취업진로뉴스 - 최신 취업 트렌드, 진로 정보, 면접 팁을 카드 뉴스 형태로 제공합니다">
+  <title>취업진로뉴스 | YESJOB 예스잡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">Y</div>
+        YESJOB
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">홈</a></li>
+        <li><a href="about.html" class="nav-link">회사소개</a></li>
+        <li><a href="news.html" class="nav-link active">취업진로뉴스</a></li>
+        <li><a href="programs.html" class="nav-link">프로그램 추천</a></li>
+        <li><a href="index.html#contact" class="nav-link">사업문의</a></li>
+        <li><a href="index.html#mentoring" class="nav-link nav-cta">멘토링 신청</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content container">
+      <div class="badge" style="background:rgba(255,255,255,0.15); color:white; border-color:rgba(255,255,255,0.3); margin-bottom:16px;">
+        <i class="fas fa-newspaper"></i> News & Info
+      </div>
+      <h1>취업진로뉴스</h1>
+      <p>최신 취업 트렌드, 진로 정보, 면접 팁을 카드 뉴스 형태로 전달합니다</p>
+      <div class="breadcrumb">
+        <a href="index.html">홈</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>취업진로뉴스</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWS SECTION ========== -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <!-- 검색 & 필터 -->
+      <div class="news-controls reveal">
+        <div class="news-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="newsSearch" placeholder="뉴스를 검색하세요...">
+        </div>
+        <div class="news-filter">
+          <button class="nf-btn active" data-filter="all">전체</button>
+          <button class="nf-btn" data-filter="trend">취업 트렌드</button>
+          <button class="nf-btn" data-filter="career">진로탐색</button>
+          <button class="nf-btn" data-filter="interview">면접 팁</button>
+          <button class="nf-btn" data-filter="info">공채 정보</button>
+          <button class="nf-btn" data-filter="salary">급여 정보</button>
+        </div>
+      </div>
+
+      <!-- 메인 뉴스 (Featured) -->
+      <div class="featured-news reveal" data-delay="0">
+        <div class="fn-image fn-blue">
+          <div class="fn-img-content">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <span class="fn-category-badge">취업 트렌드</span>
+          <span class="fn-hot-badge">HOT</span>
+        </div>
+        <div class="fn-body">
+          <div class="fn-meta">
+            <span><i class="fas fa-tag"></i> 취업 트렌드</span>
+            <span><i class="far fa-calendar-alt"></i> 2025.03.15</span>
+            <span><i class="far fa-eye"></i> 2,841</span>
+          </div>
+          <h2>2025년 하반기 채용 트렌드: AI 역량·직무 경험이 핵심 키워드로 부상</h2>
+          <p>2025년 하반기 주요 기업의 채용 트렌드를 분석한 결과, AI 도구 활용 능력과 실질적인 직무 경험이 합격의 핵심 요소로 부상하고 있습니다. 대기업을 중심으로 생성형 AI 활용 역량을 평가하는 채용 과정이 늘어났으며, 인턴십 및 프로젝트 경험이 서류 전형 합격을 좌우하는 주요 변수로 작용하고 있습니다.</p>
+          <button class="btn btn-primary fn-btn" onclick="openModal(0)">
+            자세히 읽기 <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 뉴스 그리드 -->
+      <div class="news-cards-grid" id="newsGrid">
+        <!-- 카드 1 -->
+        <div class="nc-card reveal" data-category="career" data-delay="0" onclick="openModal(1)">
+          <div class="ncc-image orange">
+            <i class="fas fa-chart-line"></i>
+            <span class="ncc-tag">진로탐색</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.03.12</span>
+              <span><i class="far fa-eye"></i> 1,534</span>
+            </div>
+            <h3>이공계 전공자를 위한 비개발 직군 진로 가이드</h3>
+            <p>이공계 출신이 도전할 수 있는 다양한 비개발 직군과 각 직군별 취업 전략을 소개합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">진로탐색</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 2 -->
+        <div class="nc-card reveal" data-category="interview" data-delay="100" onclick="openModal(2)">
+          <div class="ncc-image green">
+            <i class="fas fa-video"></i>
+            <span class="ncc-tag">면접 팁</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.03.10</span>
+              <span><i class="far fa-eye"></i> 3,201</span>
+            </div>
+            <h3>AI 면접 완벽 대비: 합격률 높이는 7가지 전략</h3>
+            <p>점점 늘어나는 AI 면접에 대비하는 실전 전략과 자주 나오는 질문 유형을 분석합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">면접 팁</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 3 -->
+        <div class="nc-card reveal" data-category="info" data-delay="200" onclick="openModal(3)">
+          <div class="ncc-image purple">
+            <i class="fas fa-landmark"></i>
+            <span class="ncc-tag">공채 정보</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.03.08</span>
+              <span><i class="far fa-eye"></i> 4,102</span>
+            </div>
+            <h3>2025년 공공기관 채용 일정 총정리</h3>
+            <p>NCS 기반 공공기관 채용 일정과 기관별 합격 전략을 한눈에 정리했습니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">공채 정보</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 4 -->
+        <div class="nc-card reveal" data-category="salary" data-delay="0" onclick="openModal(4)">
+          <div class="ncc-image sky">
+            <i class="fas fa-coins"></i>
+            <span class="ncc-tag">급여 정보</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.03.05</span>
+              <span><i class="far fa-eye"></i> 2,678</span>
+            </div>
+            <h3>업종별 신입 평균 연봉 비교 분석 2025</h3>
+            <p>IT, 금융, 제조, 서비스 등 주요 업종별 신입사원 평균 연봉과 상승 트렌드를 분석합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">급여 정보</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 5 -->
+        <div class="nc-card reveal" data-category="trend" data-delay="100" onclick="openModal(5)">
+          <div class="ncc-image red">
+            <i class="fas fa-robot"></i>
+            <span class="ncc-tag">취업 트렌드</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.03.03</span>
+              <span><i class="far fa-eye"></i> 3,890</span>
+            </div>
+            <h3>ChatGPT 활용 이력서 작성법: AI 시대의 자기소개서</h3>
+            <p>생성형 AI를 활용해 경쟁력 있는 이력서와 자기소개서를 작성하는 실전 가이드</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">취업 트렌드</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 6 -->
+        <div class="nc-card reveal" data-category="career" data-delay="200" onclick="openModal(6)">
+          <div class="ncc-image blue">
+            <i class="fas fa-user-graduate"></i>
+            <span class="ncc-tag">진로탐색</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.02.28</span>
+              <span><i class="far fa-eye"></i> 1,956</span>
+            </div>
+            <h3>문과 졸업생이 IT 업계에 도전하는 3가지 방법</h3>
+            <p>비전공자도 IT 기업에 도전할 수 있는 직무와 준비 방법을 구체적으로 알아봅니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">진로탐색</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 7 -->
+        <div class="nc-card reveal" data-category="interview" data-delay="0" onclick="openModal(7)">
+          <div class="ncc-image orange">
+            <i class="fas fa-comments"></i>
+            <span class="ncc-tag">면접 팁</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.02.25</span>
+              <span><i class="far fa-eye"></i> 2,341</span>
+            </div>
+            <h3>첫인상 결정하는 면접 복장·태도 완벽 가이드</h3>
+            <p>대기업·스타트업·공공기관별 면접 복장 기준과 합격자들이 공통으로 보여준 태도를 정리합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">면접 팁</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 8 -->
+        <div class="nc-card reveal" data-category="info" data-delay="100" onclick="openModal(8)">
+          <div class="ncc-image green">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="ncc-tag">공채 정보</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.02.22</span>
+              <span><i class="far fa-eye"></i> 3,567</span>
+            </div>
+            <h3>삼성·SK·LG 대기업 2025 상반기 공채 분석</h3>
+            <p>국내 주요 대기업 2025 상반기 공채 일정, 직무별 TO, 합격 스펙을 분석합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">공채 정보</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+        <!-- 카드 9 -->
+        <div class="nc-card reveal" data-category="trend" data-delay="200" onclick="openModal(9)">
+          <div class="ncc-image purple">
+            <i class="fas fa-globe"></i>
+            <span class="ncc-tag">취업 트렌드</span>
+          </div>
+          <div class="ncc-body">
+            <div class="ncc-meta">
+              <span>2025.02.20</span>
+              <span><i class="far fa-eye"></i> 2,134</span>
+            </div>
+            <h3>2025 직종별 취업 전망 보고서: 뜨는 직업 vs 지는 직업</h3>
+            <p>4차 산업혁명과 AI 발전에 따라 유망해지는 직종과 위협받는 직종을 분석합니다.</p>
+            <div class="ncc-footer">
+              <span class="ncc-cat">취업 트렌드</span>
+              <span class="ncc-read">읽기 <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 페이지네이션 -->
+      <div class="pagination reveal">
+        <button class="pg-btn active">1</button>
+        <button class="pg-btn">2</button>
+        <button class="pg-btn">3</button>
+        <button class="pg-btn">4</button>
+        <button class="pg-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== NEWS MODAL ========== -->
+  <div class="news-modal" id="newsModal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" id="modalBody">
+        <!-- 동적으로 채워짐 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon">Y</div>
+            YESJOB
+          </div>
+          <p>예스잡은 청년들의 취업과 진로를 위한<br>전문 솔루션을 제공합니다.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-blog"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>메뉴</h4>
+          <ul>
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="news.html">취업진로뉴스</a></li>
+            <li><a href="programs.html">프로그램 추천</a></li>
+            <li><a href="index.html#mentoring">멘토링 신청</a></li>
+            <li><a href="index.html#contact">사업문의</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>카테고리</h4>
+          <ul>
+            <li><a href="#">취업 트렌드</a></li>
+            <li><a href="#">진로탐색</a></li>
+            <li><a href="#">면접 팁</a></li>
+            <li><a href="#">공채 정보</a></li>
+            <li><a href="#">급여 정보</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>연락처</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>02-000-0000</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>info@yesjob.kr</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 YESJOB 예스잡. All rights reserved.</p>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:rgba(255,255,255,0.5); font-size:0.85rem;">개인정보처리방침</a>
+          <a href="#" style="color:rgba(255,255,255,0.5); font-size:0.85rem;">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 뉴스 데이터
+    const newsData = [
+      {
+        title: "2025년 하반기 채용 트렌드: AI 역량·직무 경험이 핵심 키워드로 부상",
+        category: "취업 트렌드",
+        date: "2025.03.15",
+        views: 2841,
+        icon: "fas fa-briefcase",
+        colorClass: "blue",
+        content: `
+          <h4>📌 핵심 요약</h4>
+          <p>2025년 하반기 주요 기업의 채용 트렌드를 분석한 결과, <strong>AI 도구 활용 능력</strong>과 <strong>실질적인 직무 경험</strong>이 합격의 핵심 요소로 부상하고 있습니다.</p>
+          
+          <h4>🔍 주요 트렌드 5가지</h4>
+          <ol>
+            <li><strong>AI 활용 역량 평가 강화</strong> - 채용 과정에서 ChatGPT, Copilot 등 생성형 AI 활용 능력 직접 평가</li>
+            <li><strong>직무 경험 우선</strong> - 인턴십, 프로젝트 경험이 서류 합격의 핵심 변수</li>
+            <li><strong>직무 적합성 중심 채용</strong> - 스펙보다 '이 직무를 왜, 어떻게 할 수 있는가'에 집중</li>
+            <li><strong>수시 채용 확대</strong> - 공개채용 감소, 상시/수시 채용 증가 추세 지속</li>
+            <li><strong>ESG 역량 중시</strong> - 기업의 사회적 책임에 공감하는 인재 선호</li>
+          </ol>
+          
+          <h4>💡 취업 준비 전략</h4>
+          <ul>
+            <li>AI 도구 활용 포트폴리오를 미리 준비하세요</li>
+            <li>짧은 인턴십이라도 직무 경험을 쌓는 것이 중요합니다</li>
+            <li>수시 채용에 대비해 평소 기업 탐색을 꾸준히 하세요</li>
+            <li>지원 직무의 핵심 역량을 명확히 파악하고 어필하세요</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 예스잡의 AI 시대 취업전략 특강을 통해 실전 AI 활용 방법을 익혀보세요!
+          </div>
+        `
+      },
+      {
+        title: "이공계 전공자를 위한 비개발 직군 진로 가이드",
+        category: "진로탐색",
+        date: "2025.03.12",
+        views: 1534,
+        icon: "fas fa-chart-line",
+        colorClass: "orange",
+        content: `
+          <h4>📌 이공계 출신이 도전할 수 있는 비개발 직군</h4>
+          <p>이공계 전공자들은 개발자 외에도 다양한 직군에서 강점을 발휘할 수 있습니다.</p>
+          
+          <h4>🎯 추천 직군별 가이드</h4>
+          <ol>
+            <li><strong>기술 영업/세일즈 엔지니어</strong> - 제품·기술 이해력을 바탕으로 고객 솔루션 제안. 연봉 높고 성장 빠름</li>
+            <li><strong>데이터 분석가</strong> - 통계, Python 기초만 있어도 도전 가능. 수요 폭발적 증가</li>
+            <li><strong>기술 기획/PM</strong> - 개발 이해 + 비즈니스 감각이 필요한 융합 직군</li>
+            <li><strong>특허·IP 전문가</strong> - 이공계 전공 필수, 이직 없이 전문성 쌓기 좋음</li>
+            <li><strong>품질관리(QA/QC)</strong> - 제조·IT 기업 모두 수요 있는 안정적 직군</li>
+          </ol>
+          
+          <h4>💡 직군 전환 준비 방법</h4>
+          <ul>
+            <li>희망 직군 현직자 멘토링으로 실무 파악 먼저 하기</li>
+            <li>직군 관련 자격증·수료증으로 전문성 어필</li>
+            <li>이공계 배경이 강점이 되는 이유를 자기소개서에 명확히</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 예스잡 1:1 멘토링을 통해 비개발 직군 현직자를 만나보세요!
+          </div>
+        `
+      },
+      {
+        title: "AI 면접 완벽 대비: 합격률 높이는 7가지 전략",
+        category: "면접 팁",
+        date: "2025.03.10",
+        views: 3201,
+        icon: "fas fa-video",
+        colorClass: "green",
+        content: `
+          <h4>📌 AI 면접이란?</h4>
+          <p>AI 면접은 카메라와 마이크를 통해 지원자의 <strong>언어적·비언어적 표현</strong>을 AI가 분석하는 면접 방식입니다. 삼성, SK, 롯데 등 대기업에서 활발히 도입 중입니다.</p>
+          
+          <h4>✅ 합격률 높이는 7가지 전략</h4>
+          <ol>
+            <li><strong>카메라 눈높이 맞추기</strong> - 화면 속 내 모습이 아닌 카메라 렌즈를 바라보세요</li>
+            <li><strong>자연스러운 미소 연습</strong> - 어색하지 않게 편안한 표정 유지하기</li>
+            <li><strong>STAR 기법 답변</strong> - 상황-과제-행동-결과 구조로 답변 구성</li>
+            <li><strong>속도 조절</strong> - 너무 빠르거나 느리지 않게, 분당 200-250자 속도 권장</li>
+            <li><strong>배경·조명 점검</strong> - 밝고 깔끔한 배경, 얼굴에 충분한 조명 확보</li>
+            <li><strong>유사 플랫폼 사전 연습</strong> - 뷰인터, 마이다스 등 유사 플랫폼으로 연습</li>
+            <li><strong>돌발 질문 대비</strong> - 게임형·인지능력 검사 유형도 함께 준비</li>
+          </ol>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 예스잡 취업 교육에서 AI 면접 모의 테스트를 받아보세요!
+          </div>
+        `
+      },
+      {
+        title: "2025년 공공기관 채용 일정 총정리",
+        category: "공채 정보",
+        date: "2025.03.08",
+        views: 4102,
+        icon: "fas fa-landmark",
+        colorClass: "purple",
+        content: `
+          <h4>📌 2025 공공기관 채용 특징</h4>
+          <p>2025년 공공기관 채용은 <strong>NCS 기반</strong>이 강화되고, <strong>블라인드 채용</strong> 기조가 유지됩니다.</p>
+          
+          <h4>📅 주요 기관별 채용 일정 (예정)</h4>
+          <ol>
+            <li><strong>1분기 (1~3월)</strong> - 코레일, 한국전력, 국민건강보험공단 등</li>
+            <li><strong>2분기 (4~6월)</strong> - 금융공기업(산업은행, 기업은행), 건강보험심사평가원</li>
+            <li><strong>3분기 (7~9월)</strong> - LH, 한국도로공사, 주요 공기업 하반기</li>
+            <li><strong>4분기 (10~12월)</strong> - 지방공기업, 공무원 최종 합격 발표</li>
+          </ol>
+          
+          <h4>🎯 NCS 준비 핵심 팁</h4>
+          <ul>
+            <li>직업기초능력 10개 영역 중 의사소통·수리·문제해결 집중</li>
+            <li>직무수행능력은 지원 기관의 업무 특성 파악 먼저</li>
+            <li>최소 3개월 이상 꾸준한 기출문제 풀이 필수</li>
+            <li>자기소개서에 공공기관 핵심 가치 반영하기</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 공공기관 취업 멘토링을 통해 현직 공공기관 종사자의 생생한 조언을 들어보세요!
+          </div>
+        `
+      },
+      {
+        title: "업종별 신입 평균 연봉 비교 분석 2025",
+        category: "급여 정보",
+        date: "2025.03.05",
+        views: 2678,
+        icon: "fas fa-coins",
+        colorClass: "sky",
+        content: `
+          <h4>📊 2025 업종별 신입 평균 연봉</h4>
+          <p>2025년 기준 주요 업종별 대졸 신입사원 평균 연봉을 정리했습니다.</p>
+          
+          <h4>💰 업종별 평균 연봉 순위</h4>
+          <ol>
+            <li><strong>금융·투자</strong> - 4,500만~6,000만원</li>
+            <li><strong>IT·반도체</strong> - 4,000만~5,500만원</li>
+            <li><strong>에너지·화학</strong> - 3,800만~5,000만원</li>
+            <li><strong>제약·바이오</strong> - 3,500만~4,500만원</li>
+            <li><strong>대기업 제조</strong> - 3,500만~4,500만원</li>
+            <li><strong>공공기관</strong> - 3,000만~3,800만원</li>
+            <li><strong>유통·소비재</strong> - 2,800만~3,500만원</li>
+            <li><strong>서비스·스타트업</strong> - 2,500만~3,500만원</li>
+          </ol>
+          
+          <h4>📈 연봉 협상 팁</h4>
+          <ul>
+            <li>업계 평균 연봉을 미리 파악하고 면접에 임하기</li>
+            <li>스타트업은 스톡옵션, 유연근무 등 비금전적 보상도 고려</li>
+            <li>연봉보다 성장 가능성이 높은 기업 우선 고려 권장</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 연봉보다 커리어 성장에 집중하세요. 예스잡 멘토링으로 장기 커리어를 설계해보세요!
+          </div>
+        `
+      },
+      {
+        title: "ChatGPT 활용 이력서 작성법: AI 시대의 자기소개서",
+        category: "취업 트렌드",
+        date: "2025.03.03",
+        views: 3890,
+        icon: "fas fa-robot",
+        colorClass: "red",
+        content: `
+          <h4>📌 AI로 이력서 쓰는 법</h4>
+          <p>ChatGPT를 활용해 경쟁력 있는 이력서를 작성하는 방법을 소개합니다. 단, AI가 대신 쓰는 것이 아니라 <strong>AI와 함께 다듬는</strong> 방식으로 활용해야 합니다.</p>
+          
+          <h4>🤖 ChatGPT 활용 3단계</h4>
+          <ol>
+            <li><strong>1단계: 경험 정리</strong> - 내 경험을 나열하고 ChatGPT에게 구조화 요청</li>
+            <li><strong>2단계: 키워드 도출</strong> - 채용공고 JD를 ChatGPT에 분석 요청, 핵심 키워드 추출</li>
+            <li><strong>3단계: 문장 다듬기</strong> - 작성한 내용을 ChatGPT로 가독성·설득력 개선</li>
+          </ol>
+          
+          <h4>⚠️ 주의사항</h4>
+          <ul>
+            <li>AI가 생성한 내용을 그대로 제출하지 마세요 - 인사담당자가 쉽게 판별합니다</li>
+            <li>자신의 실제 경험과 언어가 반드시 담겨야 합니다</li>
+            <li>AI 의존도를 낮추고, 자신만의 스토리를 완성하는 데 활용하세요</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 예스잡 이력서 클리닉에서 AI가 아닌 전문가의 피드백을 받아보세요!
+          </div>
+        `
+      },
+      {
+        title: "문과 졸업생이 IT 업계에 도전하는 3가지 방법",
+        category: "진로탐색",
+        date: "2025.02.28",
+        views: 1956,
+        icon: "fas fa-user-graduate",
+        colorClass: "blue",
+        content: `
+          <h4>📌 문과생도 IT 취업이 가능할까?</h4>
+          <p>가능합니다! IT 기업에는 개발자 외에도 <strong>비개발 직군</strong>이 훨씬 더 많습니다.</p>
+          
+          <h4>💡 3가지 도전 방법</h4>
+          <ol>
+            <li><strong>방법 1: 비개발 직군 정공법</strong><br>IT 기업의 마케터, 기획자, 운영자, HR 담당자로 도전. 문과적 역량(글쓰기, 분석, 커뮤니케이션)이 오히려 강점</li>
+            <li><strong>방법 2: 국비지원 교육으로 전공 전환</strong><br>K-Digital Training 등 국비 지원 부트캠프 수료 후 개발자 도전. 6~12개월 집중 과정</li>
+            <li><strong>방법 3: 도메인 전문성 + IT 결합</strong><br>자신의 전공(법, 경제, 심리 등) + IT 역량 결합. 법테크, 에듀테크, 핀테크 분야에서 강점 발휘</li>
+          </ol>
+          
+          <h4>🎯 추천 준비 경로</h4>
+          <ul>
+            <li>데이터 분석 기초: Python, SQL 학습</li>
+            <li>IT 기업 인턴십 경험 먼저 쌓기</li>
+            <li>IT 산업 이해도를 높이는 뉴스레터 구독</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> IT 분야 현직 멘토와의 상담으로 구체적인 로드맵을 설계하세요!
+          </div>
+        `
+      },
+      {
+        title: "첫인상 결정하는 면접 복장·태도 완벽 가이드",
+        category: "면접 팁",
+        date: "2025.02.25",
+        views: 2341,
+        icon: "fas fa-comments",
+        colorClass: "orange",
+        content: `
+          <h4>📌 면접 복장의 중요성</h4>
+          <p>면접관은 지원자를 만난 첫 7초 안에 <strong>첫인상</strong>을 형성합니다. 복장과 태도로 이미 50% 이상의 평가가 결정됩니다.</p>
+          
+          <h4>👔 기업 유형별 복장 가이드</h4>
+          <ol>
+            <li><strong>대기업·금융권</strong> - 정장 필수, 깔끔한 단색 위주, 액세서리 최소화</li>
+            <li><strong>IT·스타트업</strong> - 비즈니스 캐주얼 허용, 깔끔하고 단정한 느낌</li>
+            <li><strong>공공기관</strong> - 보수적 정장 기준, 진한 색 피하기</li>
+            <li><strong>서비스·유통</strong> - 밝고 친근한 인상, 과도한 액세서리는 피하기</li>
+          </ol>
+          
+          <h4>🙂 면접 태도 체크리스트</h4>
+          <ul>
+            <li>✅ 대기실에서도 긴장 풀지 않기 (직원도 지켜볼 수 있음)</li>
+            <li>✅ 입실 시 밝은 인사와 자연스러운 미소</li>
+            <li>✅ 바른 자세, 산만한 시선 처리 금지</li>
+            <li>✅ 대답 전 짧은 호흡으로 안정감 찾기</li>
+            <li>✅ 마지막에 긍정적인 의지 표현으로 마무리</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 예스잡 모의면접으로 실전 면접 태도를 점검받아보세요!
+          </div>
+        `
+      },
+      {
+        title: "삼성·SK·LG 대기업 2025 상반기 공채 분석",
+        category: "공채 정보",
+        date: "2025.02.22",
+        views: 3567,
+        icon: "fas fa-calendar-alt",
+        colorClass: "green",
+        content: `
+          <h4>📌 2025 대기업 상반기 공채 트렌드</h4>
+          <p>주요 대기업의 2025 상반기 공채 특징과 준비 전략을 정리했습니다.</p>
+          
+          <h4>🏢 기업별 공채 특징</h4>
+          <ol>
+            <li><strong>삼성전자</strong> - GSAT(직무적성검사) 유지, 직무 중심 면접 강화. 반도체·DX부문 모집 규모 확대</li>
+            <li><strong>SK그룹</strong> - AI 역량 평가 도입, 팀 단위 수시채용 확대. SK하이닉스 대규모 채용</li>
+            <li><strong>LG그룹</strong> - L-TAB 인·적성 검사, ESG 관련 가치관 면접 비중 증가</li>
+            <li><strong>현대자동차</strong> - 전동화·SW 직군 채용 대폭 증가, 이공계 우대</li>
+          </ol>
+          
+          <h4>📋 공통 준비 전략</h4>
+          <ul>
+            <li>인·적성 검사 유형별 기출문제 반복 풀이</li>
+            <li>지원 기업의 최신 뉴스·사업 방향 파악</li>
+            <li>직무 연관 프로젝트 경험 미리 정리</li>
+            <li>면접관을 설득하는 논리적 자기소개 훈련</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 대기업 합격자 멘토와의 멘토링으로 생생한 후기를 들어보세요!
+          </div>
+        `
+      },
+      {
+        title: "2025 직종별 취업 전망 보고서: 뜨는 직업 vs 지는 직업",
+        category: "취업 트렌드",
+        date: "2025.02.20",
+        views: 2134,
+        icon: "fas fa-globe",
+        colorClass: "purple",
+        content: `
+          <h4>📌 2025 직업 전망 보고서</h4>
+          <p>AI와 디지털 전환이 가속화되면서 직업 시장도 급격히 변화하고 있습니다.</p>
+          
+          <h4>📈 뜨는 직업 TOP 5</h4>
+          <ol>
+            <li><strong>AI 프롬프트 엔지니어</strong> - AI를 잘 활용하는 전문가, 수요 폭발적</li>
+            <li><strong>데이터 분석가/사이언티스트</strong> - 모든 산업에서 필요로 하는 필수 직종</li>
+            <li><strong>사이버보안 전문가</strong> - 디지털화에 따른 보안 위협 증가로 수요 급증</li>
+            <li><strong>ESG 컨설턴트</strong> - 기업의 ESG 경영 의무화로 전문가 수요 증가</li>
+            <li><strong>헬스케어 IT 전문가</strong> - 디지털 헬스케어 시장 급성장</li>
+          </ol>
+          
+          <h4>📉 위협받는 직업 5가지</h4>
+          <ul>
+            <li>단순 데이터 입력/처리 업무</li>
+            <li>기본적인 번역·통역 업무</li>
+            <li>단순 반복 제조업 생산직</li>
+            <li>기본 고객 응대 콜센터</li>
+            <li>단순 문서 작성·정리 업무</li>
+          </ul>
+          
+          <div class="modal-tip">
+            <i class="fas fa-lightbulb"></i>
+            <strong>예스잡 TIP:</strong> 미래 유망 직종으로의 전환을 도와드리는 예스잡의 진로 컨설팅을 받아보세요!
+          </div>
+        `
+      }
+    ];
+
+    // 모달 열기
+    function openModal(index) {
+      const data = newsData[index];
+      const modal = document.getElementById('newsModal');
+      const body = document.getElementById('modalBody');
+      
+      body.innerHTML = `
+        <div class="modal-header">
+          <div class="mh-icon ${data.colorClass}">
+            <i class="${data.icon}"></i>
+          </div>
+          <div class="mh-meta">
+            <span class="mh-cat">${data.category}</span>
+            <span class="mh-date"><i class="far fa-calendar-alt"></i> ${data.date}</span>
+            <span class="mh-view"><i class="far fa-eye"></i> ${data.views.toLocaleString()}</span>
+          </div>
+        </div>
+        <h2 class="modal-title">${data.title}</h2>
+        <div class="modal-article">${data.content}</div>
+        <div class="modal-actions">
+          <a href="programs.html" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> 관련 프로그램 보기
+          </a>
+          <a href="index.html#mentoring" class="btn btn-secondary">
+            <i class="fas fa-user-graduate"></i> 멘토링 신청
+          </a>
+        </div>
+      `;
+      
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // 모달 닫기
+    function closeModal() {
+      document.getElementById('newsModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // 카테고리 필터
+    const filterBtns = document.querySelectorAll('.nf-btn');
+    const newsCards = document.querySelectorAll('.nc-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.dataset.filter;
+        const catMap = {
+          'trend': '취업 트렌드',
+          'career': '진로탐색',
+          'interview': '면접 팁',
+          'info': '공채 정보',
+          'salary': '급여 정보'
+        };
+        
+        newsCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 검색
+    document.getElementById('newsSearch').addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      newsCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const desc = card.querySelector('p').textContent.toLowerCase();
+        if (title.includes(q) || desc.includes(q)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Navbar always scrolled
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.add('scrolled');
+    window.addEventListener('scroll', () => navbar.classList.add('scrolled'));
+  </script>
+</body>
+</html>
